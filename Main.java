@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package FastFoodKitchen;
+package fastfoodkitchen;
 
 import java.util.*;
 
@@ -50,6 +50,7 @@ public class Main {
                     int orderNum = kitchen.addOrder(ham, cheese, veggie, sodas, TOGO);
                     System.out.println("Thank-you. Your order number is " + orderNum);
                     System.out.println();
+                    kitchen.addOrder(ham, cheese, veggie, sodas, TOGO); // overflow
                     break;
                     
                 // cancel last order    
@@ -85,7 +86,7 @@ public class Main {
                     if (kitchen.isOrderDone(input) == false)
                         System.out.println("Your order is being prepared");
                     else
-                        System.out.println("Your order is ready");
+                        System.out.println("Your order was either not found or has been finished");
                     break;
                     
                 // exit program
