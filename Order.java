@@ -4,10 +4,6 @@
  */
 package FastFoodKitchen;
 
-/**
- *
- * @author jmhee
- */
 
 public class Order {
    private int numHambergers = 0;
