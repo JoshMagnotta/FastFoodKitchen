@@ -5,16 +5,12 @@
 package FastFoodKitchen;
 import java.util.*;
 
-/**
- *
- * @author jmhee
- */
+
 public class FastFoodKitchen {
     private ArrayList<Order> orderList = new ArrayList<>();
     private static int nextOrderNum = 1;
     
     /**
-     * 
      * Adds all orders to the arraylist
      */
     
@@ -82,7 +78,6 @@ public class FastFoodKitchen {
     }
     
     /**
-     * 
      * @return returns the number of pending orders
      */
     
