@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package FastFoodKitchen;
+package fastfoodkitchen;
 import java.util.*;
 
 
@@ -87,22 +87,20 @@ public class FastFoodKitchen {
     
     public boolean isOrderDone(int orderID) {
         for (int i = 0; i < orderList.size(); i++) {
-        if (orderList.indexOf(i) == orderID) 
+        if (orderList.get(i).getOrderNum() == orderID) 
             return false;
     }
-        return false;
+        return true;
     }
     
     public boolean cancelOrder(int orderID) {
         for (int i = 0; i < orderList.size(); i++) {
-            if (orderList.indexOf(i) == orderID) {
+            if (orderList.get(i).getOrderNum() == orderID) {
                 orderList.remove(i);
                 return true;
             }
         }
-        return true;
+        return false;
     }
  }
     
-    
-
