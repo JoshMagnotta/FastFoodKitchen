@@ -8,18 +8,16 @@ import java.util.*;
 
 /**
  *
- * @author jmhee
+ *  @author Josh Magnotta
  */
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
 
         FastFoodKitchen kitchen = new FastFoodKitchen();
         Scanner sc = new Scanner(System.in);
 
+        // runs until no orders remaining
         while (kitchen.getNumOrdersPending() != 0) {
             // see what the user wants to do
             System.out.println("Please select from the following menu of options, by typing a number:");
@@ -33,6 +31,7 @@ public class Main {
             int num = sc.nextInt();
             switch (num) {
 
+                // order food
                 case 1:
                     System.out.println("How many hamburgers do you want?");
                     int ham = sc.nextInt();
@@ -52,6 +51,8 @@ public class Main {
                     System.out.println("Thank-you. Your order number is " + orderNum);
                     System.out.println();
                     break;
+                    
+                // cancel last order    
                 case 2:
                     boolean ready = kitchen.cancelLastOrder();
                     if (ready) {
@@ -61,9 +62,13 @@ public class Main {
                     }
                     System.out.println();
                     break;
+                    
+                // current pending orders
                 case 3:
                     System.out.println("There are " + kitchen.getNumOrdersPending() + " pending orders");
                     break;
+                    
+                // cancel order
                 case 4:
                     System.out.println("What is your order number?");
                     int input = sc.nextInt();
@@ -72,14 +77,18 @@ public class Main {
                     else
                         System.out.println("Sorry, we could not find your order");
                     break;
+                    
+                // checks if order is ready
                 case 5:
                     System.out.println("What is your order number");
                     input = sc.nextInt();
                     if (kitchen.isOrderDone(input) == false)
                         System.out.println("Your order is being prepared");
                     else
-                        System.out.println("No order was found");
+                        System.out.println("Your order is ready");
                     break;
+                    
+                // exit program
                 case 6:
                     System.out.println("Thank you.");
                     System.exit(0);
